@@ -5,15 +5,15 @@ var url         = require('url');
 var express     = require('express');
 var browserify  = require('connect-browserify');
 var ReactAsync  = require('react-async');
-var nodejsx     = require('node-jsx').install();
-var App         = require('./client');
+var nodejsx     = require('node-jsx').install({extension: '.jsx'});
+var App         = require('./client.jsx');
 
 var development = process.env.NODE_ENV !== 'production';
 
 function renderApp(req, res, next) {
   var path = url.parse(req.url).pathname;
   var app = App({path: path});
-  ReactAsync.renderComponentToStringWithAsyncState(app, function(err, markup) {
+  ReactAsync.renderToStringAsync(app, function(err, markup) {
     if (err) {
       return next(err);
     }
@@ -34,7 +34,7 @@ var app = express();
 
 if (development) {
   app.get('/assets/bundle.js',
-    browserify('./client', {
+    browserify('./client.jsx', {
       debug: true,
       watch: true
     }));

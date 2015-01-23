@@ -10,21 +10,21 @@
     ]
   },
   "dependencies": {
-    "react": "~0.10.0",
-    "react-async": "~0.9.1",
-    "react-router-component": "~0.18.2",
-    "express": "~4.1.1",
-    "node-jsx": "~0.10.0",
-    "superagent": "~0.18.0",
-    "fibers": "~1.0.1"
+    "express": "^4.11.1",
+    "fibers": "^1.0.5",
+    "node-jsx": "^0.12.4",
+    "react": "^0.12.2",
+    "react-async": "^2.0.1",
+    "react-router-component": "^0.23.3",
+    "superagent": "^0.21.0"
   },
   "devDependencies": {
-    "reactify": "~0.13.1",
-    "envify": "~1.2.0",
-    "browserify": "~3.44.2",
-    "connect-browserify": "~2.0.1",
-    "uglify-js": "~2.4.13",
-    "supervisor": "~0.6.0"
+    "browserify": "^8.1.1",
+    "connect-browserify": "^3.2.1",
+    "envify": "^3.2.0",
+    "reactify": "^1.0.0",
+    "supervisor": "^0.6.0",
+    "uglify-js": "^2.4.16"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

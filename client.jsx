@@ -34,7 +34,7 @@ var UserPage = React.createClass({
       /*
        * The use of localhost URLs work as long as the browser is running on the same machine as the server,
        * a typical development setup.
-       * As soon as you want to run this code on public facing machines, each server will need to know it's 
+       * As soon as you want to run this code on public facing machines, each server will need to know it's
        * own hostname and port (which is ugly).
        * Relative paths cannot work for serverside rendering, as that has no page context.
        * More discussion of this issue, and solutions, can be found at:
@@ -48,14 +48,14 @@ var UserPage = React.createClass({
         });
     }
   },
-  
+
   getInitialStateAsync: function(cb) {
-    this.type.getUserInfo(this.props.username, cb);
+    UserPage.getUserInfo(this.props.username, cb);
   },
 
   componentWillReceiveProps: function(nextProps) {
     if (this.props.username !== nextProps.username) {
-      this.type.getUserInfo(nextProps.username, function(err, info) {
+      UserPage.getUserInfo(nextProps.username, function(err, info) {
         if (err) {
           throw err;
         }
@@ -110,6 +110,6 @@ module.exports = App;
 
 if (typeof window !== 'undefined') {
   window.onload = function() {
-    React.renderComponent(App(), document);
+    React.render(App(), document);
   }
 }
